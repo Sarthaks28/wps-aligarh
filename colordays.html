@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colour & Theme Days - Wisdom Public School</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .gallery-item {
+        cursor: pointer;
+      }
+      #imageModal .modal-content {
+        background: transparent;
+        border: none;
+      }
+      #imageModal .modal-body {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      #imageModal img {
+        max-height: 85vh;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      .btn-close-white-modal {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        filter: invert(1);
+        z-index: 1055;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sticky-socials d-none d-md-flex">
+      <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon call"><i class="fas fa-phone-alt"></i></a>
+      <a href="#" class="social-icon whatsapp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+      <a href="#" class="social-icon mail"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="sticky-notice">
+      <div class="notice-tab"><span>NEWS NOTICE</span></div>
+    </div>
+
+    <header>
+      <div class="container-fluid bg-white py-3 header-bar">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex align-items-center logo-area">
+            <img
+              src="https://placehold.co/80x80/orange/white?text=Logo"
+              alt="School Logo"
+              class="me-3 school-logo hover-wiggle"
+            />
+            <div>
+              <h1 class="school-name mb-0">WISDOM PUBLIC SCHOOL +2</h1>
+              <p class="school-sub mb-0 text-muted">
+                Affiliated to C.B.S.E. New Delhi
+              </p>
+            </div>
+          </div>
+          <div class="header-icons d-flex gap-3 align-items-center">
+            <a
+              href="../index.html"
+              class="text-primary hover-bounce"
+              title="Main Website"
+              ><i class="fas fa-home fa-lg"></i
+            ></a>
+            <button
+              class="btn btn-link text-dark p-0 hover-bounce"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#schoolNavbar"
+            >
+              <i class="fas fa-bars fa-2x"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="breadcrumb-strip text-center">
+        <h2 class="breadcrumb-heading">
+          <a href="culturaldays.html" class="breadcrumb-link"
+            >FESTIVALS & CULTURAL DAYS</a
+          >
+          <span class="separator">&gt;</span>
+          <span class="breadcrumb-current">COLOUR & THEME DAYS</span>
+        </h2>
+      </div>
+    </header>
+
+    <div
+      class="offcanvas offcanvas-end dark-sidebar"
+      tabindex="-1"
+      id="schoolNavbar"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-white">MENU</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"
+              ><i class="fas fa-home me-2"></i> HOME</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kindergarten.html"
+              ><i class="fas fa-child me-2"></i> KINDERGARTEN WING</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="facilities.html"
+              ><i class="fas fa-shapes me-2"></i> FACILITIES FOR EARLY
+              LEARNERS</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="container my-5 content-box bg-white p-4 p-md-5 rounded-4">
+      <div class="text-center mb-5 animate-on-scroll">
+        <h2 class="text-uppercase display-5 playful-underline">
+          Colour Days & Theme Days
+        </h2>
+        <p class="lead text-muted mt-3">
+          Learning concepts through vibrant celebrations and fun themes.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Red Day Celebration"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1551024601-56294367b3eb?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Blue Day Activities"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Yellow Day Fun"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581557991964-125469da3b8a?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Green Day Nature"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1520038410233-7141dd7e6f97?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Fruit Theme Day"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-on-scroll">
+          <div
+            class="img-hover-zoom rounded-4 shadow-sm gallery-item"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            onclick="showImage(this)"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid w-100"
+              alt="Season Theme"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-section text-white pt-5">
+      <div class="container pb-4">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 text-center text-md-start">
+            <img
+              src="https://placehold.co/150x150/orange/white?text=WPS+Logo"
+              alt="Footer Logo"
+              class="mb-3 rounded-circle hover-wiggle shadow"
+            />
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading mb-3">Quick links</h5>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right me-2 small"></i>Go to CBSE</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right me-2 small"></i>CBSE Result</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right me-2 small"></i>Transfer
+                  Certificate</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading mb-3">Contact us</h5>
+            <ul class="list-unstyled contact-info">
+              <li class="mb-3 hover-lift">
+                <i class="fas fa-map-marker-alt fa-lg me-3 text-warning"></i>
+                +91-7060602602
+              </li>
+              <li class="mb-3 hover-lift">
+                <i class="fas fa-envelope fa-lg me-3 text-warning"></i>
+                hello@wpsaligarh.in
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading mb-3">Locate us</h5>
+            <div
+              class="map-container bg-light rounded-3 shadow-sm img-hover-zoom"
+              style="
+                height: 150px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #333;
+                overflow: hidden;
+              "
+            >
+              <small>Google Map Embed</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-strip text-center py-3">
+        <p class="m-0 small">
+          COPYRIGHT © WISDOM PUBLIC SCHOOL 25 DESIGN BY
+          <a
+            href="#"
+            class="text-warning text-decoration-none fw-bold hover-wiggle d-inline-block"
+            >ACETECHNIOD</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <button
+      onclick="topFunction()"
+      id="myBtn"
+      title="Go to top"
+      class="shadow hover-bounce"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close btn-close-white-modal"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body">
+            <img id="modalImgTag" src="" alt="Full Size" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      function showImage(element) {
+        const imgElement = element.querySelector("img");
+        const modalImg = document.getElementById("modalImgTag");
+        modalImg.src = imgElement.src;
+        modalImg.alt = imgElement.alt;
+      }
+    </script>
+  </body>
+</html>
