@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll Now | Wisdom Public School</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- YOUR MAIN CSS -->
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ================= PAGE-SPECIFIC (SAFE) ================= */
+
+/* Hero box uses existing content-box style */
+.enroll-hero {
+  background: linear-gradient(
+    135deg,
+    var(--theme-maroon),
+    var(--theme-maroon-dark)
+  );
+  color: #fff;
+  padding: 60px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(150,45,45,.35);
+}
+
+/* Class cards reuse your panel feel */
+.enroll-class-card {
+  background: #fff;
+  border-radius: var(--kiddish-radius);
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all .35s cubic-bezier(.34,1.56,.64,1);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+.enroll-class-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  border-color: var(--theme-yellow);
+}
+.enroll-class-card.active {
+  border: 4px dashed var(--theme-yellow);
+  animation: pulseGlow 1.5s infinite;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 rgba(255,215,0,.6); }
+  50% { box-shadow: 0 0 25px rgba(255,215,0,.9); }
+  100% { box-shadow: 0 0 0 rgba(255,215,0,.6); }
+}
+
+/* Mascot (theme-aligned) */
+#mascot-guide {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 9999;
+}
+.mascot-body {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 15px 30px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  animation: floatMascot 2.6s ease-in-out infinite;
+}
+@keyframes floatMascot {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.mascot-bubble {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 220px;
+  font-size: .9rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+.mascot-bubble::after {
+  content:'';
+  position:absolute;
+  right:-8px;
+  bottom:18px;
+  border:8px solid transparent;
+  border-left-color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= STICKY SOCIALS (UNCHANGED) ================= -->
+<div class="sticky-socials d-none d-md-flex">
+  <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" class="social-icon call"><i class="fas fa-phone-alt"></i></a>
+  <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" class="social-icon mail"><i class="fas fa-envelope"></i></a>
+</div>
+
+<!-- ================= HEADER (EXACT SAME) ================= -->
+<header>
+  <div class="container-fluid bg-white py-3 header-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center logo-area">
+        <img src="https://placehold.co/80x80/orange/white?text=Logo"
+             class="me-3 school-logo hover-wiggle">
+        <div>
+          <h1 class="school-name mb-0">WISDOM PUBLIC SCHOOL +2</h1>
+          <p class="school-sub mb-0 text-muted">Affiliated to C.B.S.E. New Delhi</p>
+        </div>
+      </div>
+
+      <div class="header-icons d-flex gap-3 align-items-center">
+        <a href="index.html" class="text-primary hover-bounce">
+          <i class="fas fa-home fa-lg"></i>
+        </a>
+        <button class="btn btn-link text-dark p-0 hover-bounce"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#schoolNavbar">
+          <i class="fas fa-bars fa-2x"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="breadcrumb-strip text-center">
+    <h2 class="breadcrumb-heading">
+      <span class="breadcrumb-current">
+        ENROLL NOW – ADMISSIONS OPEN
+      </span>
+    </h2>
+  </div>
+</header>
+
+<!-- ================= OFFCANVAS (EXACT SAME) ================= -->
+<div class="offcanvas offcanvas-end dark-sidebar" id="schoolNavbar">
+  <div class="offcanvas-header">
+    <h5 class="text-white">MENU</h5>
+    <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="kindergarten.html">KINDERGARTEN WING</a></li>
+      <li class="nav-item"><a class="nav-link" href="enroll-now.html">ENROLL NOW</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container my-5 content-box bg-white p-4 p-md-5 rounded-4">
+
+<div class="enroll-hero text-center mb-5">
+  <h2>Enroll Now</h2>
+  <p class="mb-2">Admissions Open for</p>
+  <strong>Session 2025–26 & 2026–27</strong>
+</div>
+
+<h3 class="text-center playful-underline mb-4">Choose Class</h3>
+
+<div class="row g-4 justify-content-center mb-5">
+  <div class="col-md-4">
+    <div class="enroll-class-card" data-class="Nursery">
+      <i class="fas fa-seedling fa-3x text-success mb-2"></i>
+      <h5>Nursery</h5>
+      <p class="small text-muted">Play • Explore • Learn</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="enroll-class-card" data-class="L.K.G">
+      <i class="fas fa-star fa-3x text-warning mb-2"></i>
+      <h5>L.K.G</h5>
+      <p class="small text-muted">Foundation Learning</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="enroll-class-card" data-class="U.K.G">
+      <i class="fas fa-rocket fa-3x text-danger mb-2"></i>
+      <h5>U.K.G</h5>
+      <p class="small text-muted">Ready for Primary</p>
+    </div>
+  </div>
+</div>
+
+<!-- FORM (USES YOUR STYLES) -->
+<div class="row justify-content-center">
+<div class="col-lg-7">
+<div class="form-card-pro">
+<h3 class="form-title text-center mb-4">Admission Enquiry</h3>
+
+<form>
+  <input class="input-pro mb-3" placeholder="Child's Name">
+  <input class="input-pro mb-3" placeholder="Parent's Name">
+  <input class="input-pro mb-3" placeholder="Mobile Number">
+  <select class="input-pro mb-3" id="selectedClass">
+    <option value="">Select Class</option>
+    <option>Nursery</option>
+    <option>L.K.G</option>
+    <option>U.K.G</option>
+  </select>
+  <button class="btn-pro">Submit Enquiry</button>
+</form>
+
+</div>
+</div>
+</div>
+
+</main>
+
+<!-- ================= FOOTER (EXACT SAME STRUCTURE) ================= -->
+<footer class="footer-section text-white pt-5">
+  <div class="container pb-4">
+    <div class="row g-4">
+      <div class="col-lg-3">
+        <img src="https://placehold.co/150x150/orange/white?text=WPS"
+             class="rounded-circle shadow">
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a href="#">CBSE</a></li>
+          <li><a href="#">Mandatory Disclosure</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-heading">Contact</h5>
+        <p>+91-7060602602</p>
+        <p>hello@wpsaligarh.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-strip text-center py-3">
+    © WISDOM PUBLIC SCHOOL
+  </div>
+</footer>
+
+<!-- ================= MASCOT ================= -->
+<div id="mascot-guide">
+  <div class="mascot-bubble" id="mascotBubble">👋 I can help you enroll!</div>
+  <div class="mascot-body" id="mascotBody">🧸</div>
+</div>
+
+<!-- ================= JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.querySelectorAll('.enroll-class-card').forEach(card=>{
+  card.onclick=()=>{
+    document.querySelectorAll('.enroll-class-card').forEach(c=>c.classList.remove('active'));
+    card.classList.add('active');
+    document.getElementById('selectedClass').value = card.dataset.class;
+    document.getElementById('mascotBubble').textContent =
+      "✨ Great choice! Please fill the form below.";
+  };
+});
+</script>
+
+</body>
+</html>
