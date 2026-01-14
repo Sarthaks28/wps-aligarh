@@ -849,3 +849,587 @@ h1, h2, h3, .school-name {
     height: 220px;
   }
 }
+.daily-rhythm-adventure {
+    padding: 100px 0;
+    position: relative;
+    background-color: #fffaf0;
+    overflow: hidden;
+}
+
+.kiddish-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/kids-icons.png');
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.relative-z { position: relative; z-index: 2; }
+
+/* Grid Layout with Area Mapping */
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "s1 s2 s3"
+        "s6 s5 s4"
+        "s7 s8 s9";
+    gap: 80px 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    position: relative;
+}
+
+/* Mapping steps to the zigzag flow */
+.step-1 { grid-area: s1; } .step-2 { grid-area: s2; } .step-3 { grid-area: s3; }
+.step-4 { grid-area: s4; } .step-5 { grid-area: s5; } .step-6 { grid-area: s6; }
+.step-7 { grid-area: s7; } .step-8 { grid-area: s8; } .step-9 { grid-area: s9; }
+
+/* SVG Path Styling */
+.adventure-path {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.path-line {
+    fill: none;
+    stroke: #ffbb33;
+    stroke-width: 6;
+    stroke-dasharray: 12, 10;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+
+/* Creative Blob Cards */
+.play-card {
+    display: block;
+    text-decoration: none !important;
+    background: white;
+    /* Blob Shape */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    padding: 30px 20px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+    border: 3px solid #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 2;
+}
+
+.play-card:hover {
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.1);
+    border-color: #ffd700;
+}
+
+.blob-icon {
+    width: 85px; height: 85px;
+    border-radius: 50%;
+    margin: -50px auto 20px; /* Pull icon up slightly */
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: iconPulse 3s infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.play-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800; color: #2c3e50; font-size: 1.4rem; margin-bottom: 8px;
+}
+
+.play-info p { color: #666; font-size: 1rem; line-height: 1.3; }
+
+/* Colors */
+.bg-red { background: #ff7675; } .bg-green { background: #55efc4; } 
+.bg-purple { background: #a29bfe; } .bg-blue { background: #74b9ff; }
+.bg-orange { background: #fab1a0; } .bg-pink { background: #fd79a8; }
+.bg-lime { background: #badc58; } .bg-indigo { background: #6c5ce7; }
+.bg-dark-red { background: #d63031; }
+
+/* Responsive Flow */
+@media (max-width: 991px) {
+    .adventure-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "s1" "s2" "s3" "s4" "s5" "s6" "s7" "s8" "s9";
+        gap: 60px;
+    }
+    .adventure-path { display: none; }
+    .play-card { margin: 0 auto; max-width: 350px; }
+}
+/* ================= PANCHAKOSH CLEAN DESIGN ================= */
+
+.panchakosh-section {
+    padding: 90px 0;
+    background: #fdfdfd;
+}
+
+.panchakosh-collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the 2 bottom cards below the top 3 */
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Base Card Style */
+.kosha-card {
+    display: block;
+    text-decoration: none;
+    width: 300px;
+    height: 380px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+    transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s ease;
+    z-index: 1;
+}
+
+/* FRONT FACE (ENHANCED & CLEAN) */
+.kosha-front {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+}
+
+.icon-wrapper {
+    width: 140px;
+    height: 140px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    overflow: hidden; /* Ensures the image doesn't bleed out of the circle */
+}
+
+/* IMAGE FIX: This ensures your 4K images cover the entire circle */
+.icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fills the circle without stretching */
+    border-radius: 50%;
+    display: block;
+}
+
+.kosha-front h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.kosha-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #777;
+    background: #f3f3f3;
+    padding: 6px 15px;
+    border-radius: 50px;
+}
+
+/* BACK OVERLAY (ON HOVER) */
+.kosha-back {
+    position: absolute;
+    inset: 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .4s ease;
+}
+
+.sanskrit {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.3rem;
+    color: #800000;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.meaning {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.explore-btn {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #800000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* HOVER / ACTIVE LOGIC - Optimized for Interactivity */
+.panchakosh-collage.focused .kosha-card {
+    filter: blur(3px);
+    opacity: 0.4;
+}
+
+.panchakosh-collage.focused .kosha-card.active {
+    filter: none;
+    opacity: 1;
+    z-index: 10;
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.kosha-card.active .kosha-back {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TOP BORDERS */
+.annamaya { border-top: 6px solid #ff7675; }
+.pranamaya { border-top: 6px solid #00b894; }
+.manomaya { border-top: 6px solid #74b9ff; }
+.vijnanamaya { border-top: 6px solid #a29bfe; }
+.anandamaya { border-top: 6px solid #feca57; }
+
+/* RESPONSIVENESS */
+@media (max-width: 991px) {
+    .kosha-card {
+        width: 45%; /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .kosha-card {
+        width: 100%; /* 1 per row on mobile */
+        max-width: 320px;
+    }
+}
+
+/* --- UNIFIED CONTAINER --- */
+.unified-divine-experience {
+    padding: 120px 0;
+    background: radial-gradient(circle at top, #fffaf0 0%, #ffffff 60%, #fff9f0 100%);
+    position: relative; overflow: hidden;
+}
+
+/* --- PARALLAX BACKGROUND --- */
+/* The background icons are now hidden as per your request. */
+.parallax-bg { 
+    display: none; 
+    position: absolute; inset: 0; z-index: 1; pointer-events: none; 
+}
+.parallax-item { position: absolute; font-size: 2.5rem; color: rgba(128, 0, 0, 0.05); }
+
+/* --- INTRO TEXT --- */
+.shastra-intro {
+    max-width: 800px; margin: 0 auto;
+    font-size: 1.15rem; line-height: 1.8; color: #555;
+}
+
+/* --- CARDS (RESTORED STYLE) --- */
+.panchakosh-collage {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 30px; position: relative; z-index: 10; margin-top: 50px;
+}
+
+.kosha-card {
+    display: block; text-decoration: none; width: 310px; height: 400px;
+    border-radius: 25px; background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden; border: 1px solid rgba(0,0,0,0.02);
+}
+
+.kosha-front {
+    height: 100%; padding: 30px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+}
+
+.icon-wrapper {
+    width: 140px; height: 140px; border-radius: 50%; 
+    overflow: hidden; margin-bottom: 25px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.icon-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.kosha-front h4 {
+    font-family: 'Playfair Display', serif; font-weight: 800;
+    font-size: 1.4rem; color: #2c3e50; margin-bottom: 8px;
+}
+
+.kosha-tag {
+    font-size: 0.75rem; font-weight: 700; color: #800000;
+    background: rgba(128, 0, 0, 0.05); padding: 6px 16px; border-radius: 50px;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* --- BACK CONTENT --- */
+.kosha-back {
+    position: absolute; inset: 0; padding: 30px;
+    background: rgba(255, 255, 255, 0.98);
+    display: flex; flex-direction: column; justify-content: center;
+    opacity: 0; transform: translateY(20px); transition: all 0.4s ease;
+}
+
+.kosha-card:hover .kosha-back { opacity: 1; transform: translateY(0); }
+
+.sanskrit {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.2rem; color: #800000; margin-bottom: 15px; font-weight: 600;
+}
+
+.kosha-points {
+    list-style: none; padding: 0; margin: 0; text-align: left;
+}
+
+.kosha-points li {
+    font-size: 0.9rem; color: #555; margin-bottom: 10px;
+    padding-left: 20px; position: relative; line-height: 1.4;
+}
+
+.kosha-points li::before {
+    content: '✦'; position: absolute; left: 0; color: #feca57;
+}
+
+/* TOP BORDERS */
+.annamaya { border-top: 6px solid #ff7675; }
+.pranamaya { border-top: 6px solid #00b894; }
+.manomaya { border-top: 6px solid #74b9ff; }
+.vijnanamaya { border-top: 6px solid #a29bfe; }
+.anandamaya { border-top: 6px solid #feca57; }
+
+/* Responsive */
+@media (max-width: 991px) {
+    .kosha-card { width: 45%; }
+}
+
+/* (Existing Portal Styles...) */
+
+/* --- NEW: Enhancements for Individual Panchakosh Pages --- */
+
+/* 1. Bouncing Fun Icon Wrapper */
+.fun-icon-wrapper {
+    width: 100px; height: 100px;
+    background: #fff5cc; /* Soft sunny yellow */
+    border: 3px solid var(--theme-yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    animation: bounceSmall 3s infinite ease-in-out;
+}
+.fun-icon-wrapper i { color: var(--theme-maroon); }
+
+/* 2. Playful Blob Background behind Images */
+.image-blob-container { position: relative; z-index: 1; padding: 20px; }
+.image-blob-container::before {
+    content: ''; position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    width: 100%; padding-bottom: 90%; /* Creates the aspect ratio */
+    background-color: #e0f4ff; /* Soft kiddish blue blob */
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 70%; /* Organic shape */
+    z-index: -1; opacity: 0.8;
+    animation: wiggle 10s infinite linear; /* Slow gentle movement */
+}
+/* Alternate blob color for variety */
+.blob-alt::before { background-color: #fff0f0; /* Soft pink/maroon blob */ }
+
+/* Ensure images inside the blob look great */
+.image-blob-container .img-hover-zoom {
+    border-radius: 30px; /* Softer corners */
+    border: 4px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   🌈 RAINBOW WELCOME SKY (FINAL)
+================================ */
+
+#rainbow-welcome-sky {
+  height: 85vh;                 /* adjusted for navbar above */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sky container */
+.sky-bg {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #bdeffd, #ffffff);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* 👈 moved up */
+  flex-direction: column;
+  padding-top: 60px;             /* 👈 ensures full visibility */
+}
+
+/* ================= CLOUDS (BACKGROUND) ================= */
+
+.cloud {
+  position: absolute;
+  width: 180px;
+  height: 70px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.85;
+  z-index: 1;                    /* 👈 BEHIND RAINBOW */
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  left: 20px;
+}
+
+.cloud::after {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  right: 20px;
+}
+
+.cloud-left {
+  top: 15%;
+  left: -220px;
+  animation: cloudMoveLeft 25s linear infinite;
+}
+
+.cloud-right {
+  top: 22%;
+  right: -220px;
+  animation: cloudMoveRight 30s linear infinite;
+}
+
+/* ================= SUN ================= */
+
+.sun {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 90px;
+  height: 90px;
+  background: #ffd93b;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(255, 217, 59, 0.6);
+  animation: sunBounce 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* ================= RAINBOW ================= */
+
+.rainbow {
+  width: 520px;                  /* 👈 reduced size */
+  max-width: 90%;
+  margin-top: 40px;
+  position: relative;
+  z-index: 3;                    /* 👈 ABOVE CLOUDS */
+}
+
+.rb {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: drawRainbow 2s ease forwards;
+}
+
+.r1 { stroke: #ff6b6b; animation-delay: 0.2s; }
+.r2 { stroke: #feca57; animation-delay: 0.4s; }
+.r3 { stroke: #48dbfb; animation-delay: 0.6s; }
+.r4 { stroke: #1dd1a1; animation-delay: 0.8s; }
+
+/* ================= TEXT ================= */
+
+.welcome-text {
+  margin-top: 25px;
+  text-align: center;
+  animation: textRise 1.2s ease forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 4;                    /* 👈 TOP MOST */
+}
+
+.welcome-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #2c3e50;
+}
+
+.welcome-text p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes drawRainbow {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes textRise {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cloudMoveLeft {
+  from { left: -220px; }
+  to { left: 110%; }
+}
+
+@keyframes cloudMoveRight {
+  from { right: -220px; }
+  to { right: 110%; }
+}
+
+@keyframes sunBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media (max-width: 768px) {
+  #rainbow-welcome-sky {
+    height: 75vh;
+  }
+
+  .sky-bg {
+    padding-top: 40px;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+}
